@@ -1,28 +1,20 @@
-import { useState } from 'react'
 import './App.css'
-import Navbar from './components/Navbar'
-import { resumes } from "../constants/index"
-import ResumeCard from './components/ResumeCard'
+import { Route, Routes } from 'react-router-dom'
+import Home from './pages/Home';
+import Auth from './pages/Auth';
+import { usePuterStore } from './lib/puter';
+import { useEffect } from 'react';
 function App() {
-
+  const {init} = usePuterStore();
+  useEffect(()=>{
+    init();
+  },[init])
 
   return (
-    <main className={`bg-[url('/images/bg-main.svg')]`}>
-      <Navbar />
-      <section className='main-section'>
-        <div className='page-heading'>
-          <h1>Track Your Application & Resume Ratings</h1>
-          <h2>Review your submissions and check AI-powered feedback</h2>
-        </div>
-      </section>
-      {resumes.length > 0 && (
-        <div className='resumes-section'>
-          {resumes.map((resume) => (
-            <ResumeCard key={resume.id} resume={resume} />
-          ))}
-        </div>
-      )}
-    </main>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/auth" element={<Auth />} />
+    </Routes>
   )
 }
 
