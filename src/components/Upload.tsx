@@ -14,7 +14,7 @@ const Upload = () => {
     const [statusText, setStatusText] = useState("");
     const [file,setFile] = useState<File|null>(null)
     const handleFileSelect=(file:File|null)=>{
-        setFile[file]
+        setFile(file)
     }
     const handleAnalyze = async ({companyName,jobTitle,jobDescription,file}:{companyName:String,jobTitle:String,jobDescription:String,file:File})=>{
      setIsProcessing(true)
@@ -38,6 +38,7 @@ const Upload = () => {
      data.feedback = JSON.parse(feedback.text);
      await kv.set(`resume:${uuid}`,JSON.stringify(data));
      setStatusText("Analysis complete, redirecting...");
+     navigate(`/resume/${uuid}`)
     }
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
