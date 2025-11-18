@@ -30,10 +30,10 @@ const ATS = ({
           alt="ATS"
           className="w-10 h-10"
         />
-        <p className="text-2xl font-semibold">ATS Score - {score}/100</p>
+        <p className="text-2xl font-semibold text-gray-500">ATS Score - {score}/100</p>
       </div>
       <div className="flex flex-col gap-2">
-        <p className="font-medium text-xl">
+        <p className="font-medium text-xl text-gray-400">
           How well does your resume pass through Applicant Tracking Systems?
         </p>
         <p className="text-lg text-gray-500">
