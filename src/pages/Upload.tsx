@@ -104,7 +104,7 @@ const saveErrorLog = (message: string) => {
     }
 
     return (
-        <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+        <main className="bg-[url('/images/bg-main.svg')] dark:bg-[url('/images/bg-black-main.svg')] bg-cover">
             <Navbar />
 
             <section className="main-section">

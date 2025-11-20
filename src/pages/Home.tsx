@@ -5,6 +5,7 @@ import {usePuterStore} from "../lib/puter";
 import {Link, useNavigate} from "react-router";
 import {useEffect, useState} from "react";
 import Footer from "../components/Footer";
+import {ModeToggle} from "../components/ModeToggle"
 
 
 export default function Home() {
@@ -34,7 +35,7 @@ export default function Home() {
     loadResumes()
   }, []);
 
-  return <main className="relative bg-[url('/images/bg-main.svg')] bg-cover">
+  return <main className="relative bg-[url('/images/bg-main.svg')] dark:bg-[url('/images/bg-black-main.svg')] bg-cover">
     <Navbar />
 
     <section className="main-section">

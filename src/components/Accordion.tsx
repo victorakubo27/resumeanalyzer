@@ -61,13 +61,12 @@ export const Accordion: React.FC<AccordionProps> = ({
 };
 
 interface AccordionItemProps {
-  id: string;
+  id?: string;
   children: ReactNode;
   className?: string;
 }
 
 export const AccordionItem: React.FC<AccordionItemProps> = ({
-  id,
   children,
   className = "",
 }) => {
