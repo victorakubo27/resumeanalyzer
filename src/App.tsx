@@ -16,7 +16,7 @@ function App() {
   }, [init])
 
   return (
-    <div className='relative top-0 right-0 left-0'>
+    <div className='relative'>
       <SidebarDemo />
       <Routes>
         <Route path="/" element={<Home />} />

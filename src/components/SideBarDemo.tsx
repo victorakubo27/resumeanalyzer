@@ -49,8 +49,8 @@ export function SidebarDemo() {
   return (
     <div
       className={cn(
-        "sticky top-0 left-0 right-0 z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col overflow-hidden rounded-md border-none bg-gray-100 md:flex-row dark:border-none dark:bg-neutral-800",
-        "h-[40px]", // for your use case, use `h-screen` instead of `h-[60vh]`
+        "sticky top-0 z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col overflow-hidden border-none bg-gray-100 md:flex-row dark:border-none dark:bg-neutral-800",
+        "h-[60px]", // for your use case, use `h-screen` instead of `h-[60vh]`
       )}
     >
       <Sidebar open={open} setOpen={setOpen} animate={true}>
