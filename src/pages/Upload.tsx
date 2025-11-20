@@ -1,5 +1,4 @@
 import { type FormEvent, useState } from 'react'
-import Navbar from "../components/Navbar";
 import FileUploader from "../components/FileUploader";
 import { usePuterStore } from "../lib/puter";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +8,7 @@ import { prepareInstructions, AIResponseFormat } from "../constants";
 
 
 const Upload = () => {
-    const { auth, isLoading, fs, ai, kv } = usePuterStore();
+    const { fs, ai, kv } = usePuterStore();
     const navigate = useNavigate();
     const [isProcessing, setIsProcessing] = useState(false);
     const [statusText, setStatusText] = useState('');
@@ -105,10 +104,8 @@ const saveErrorLog = (message: string) => {
 
     return (
         <main className="bg-[url('/images/bg-main.svg')] dark:bg-[url('/images/bg-black-main.svg')] bg-cover">
-            <Navbar />
-
             <section className="main-section">
-                <div className="page-heading py-16">
+                <div className="page-heading py-3">
                     <h1>Smart feedback for your dream job</h1>
                     {isProcessing ? (
                         <>
@@ -138,7 +135,9 @@ const saveErrorLog = (message: string) => {
                                 <FileUploader onFileSelect={handleFileSelect} />
                             </div>
 
-                            <button className="primary-button" type="submit">
+                            <button className="w-full px-4 py-2 rounded-lg 
+                           dark:!bg-gray-200 dark:!text-black 
+                           !bg-neutral-800 !text-white" type="submit">
                                 Analyze Resume
                             </button>
                         </form>
