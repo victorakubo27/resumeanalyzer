@@ -28,10 +28,11 @@ const WipeApp = () => {
         });
         await kv.flush();
         loadFiles();
+        navigate("/")
     };
 
     if (isLoading) {
-        return <div>Loading...</div>;
+        return <div className="dark:text-gray-200 text-neutral-800">Loading...</div>;
     }
 
     if (error) {
@@ -39,12 +40,12 @@ const WipeApp = () => {
     }
 
     return (
-        <div>
-            Authenticated as: {auth.user?.username}
-            <div>Existing files:</div>
-            <div className="flex flex-col gap-4">
+        <div className="items-center flex flex-col gap-5 bg-blue-100 text-neutral-800 dark:bg-neutral-800 h-screen w-screen dark:text-gray-200 pt-7">
+            Authenticated as: {auth.user?.username.toUpperCase()}
+            <div className="text-neutral-800 dark:text-gray-200">Existing files:</div>
+            <div className="flex flex-col gap-4 dark:text-gray-200">
                 {files.map((file) => (
-                    <div key={file.id} className="flex flex-row gap-4">
+                    <div key={file.id} className="flex flex-row gap-4 text-neutral-800 dark:text-gray-200">
                         <p>{file.name}</p>
                     </div>
                 ))}

@@ -4,6 +4,7 @@ import { Sidebar, SidebarBody, SidebarLink } from "./ui/sidebar";
 import {
   IconArrowLeft,
   IconBrandTabler,
+  IconRowRemove,
   IconUpload,
   IconUserBolt,
 } from "@tabler/icons-react";
@@ -43,6 +44,13 @@ export function SidebarDemo() {
         <IconArrowLeft className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200" />
       ),
     },
+    {
+      label:"Wipe App",
+      href:"/wipe",
+      icon:(
+        <IconRowRemove className="h-5 w-5 shrink-0 text-neutral-700 dark:text-neutral-200"/>
+      )
+    }
   ];
   const maleNameInitials = ["A", "B", "D", "G", "J", "K", "M", "P", "R", "T", "V", "W", "Y", "Z"];
   
