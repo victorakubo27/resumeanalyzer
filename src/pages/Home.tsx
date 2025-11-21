@@ -5,7 +5,6 @@ import {usePuterStore} from "../lib/puter";
 import {Link, useNavigate} from "react-router";
 import {useEffect, useState} from "react";
 import Footer from "../components/Footer";
-import {ModeToggle} from "../components/ModeToggle"
 
 
 export default function Home() {

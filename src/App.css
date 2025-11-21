@@ -28,6 +28,9 @@ body {
 main {
   @apply min-h-screen pt-10;
 }
+a {
+  @apply text-white;
+}
 h1 {
   @apply max-sm:text-[3rem] text-6xl  text-gradient dark:text-white leading-tight xl:tracking-[-2px] font-semibold;
 }

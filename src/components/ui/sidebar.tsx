@@ -7,7 +7,7 @@ import { ModeToggle } from "../ModeToggle";
 import { usePuterStore } from "../../lib/puter";
 
 interface Links {
-  label: string;
+  label: string | any;
   href: string;
   icon: React.JSX.Element | React.ReactNode;
 }

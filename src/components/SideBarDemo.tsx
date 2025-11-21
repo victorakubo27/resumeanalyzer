@@ -1,10 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import { useState,useEffect } from "react";
 import { Sidebar, SidebarBody, SidebarLink } from "./ui/sidebar";
 import {
   IconArrowLeft,
   IconBrandTabler,
-  IconSettings,
   IconUpload,
   IconUserBolt,
 } from "@tabler/icons-react";
@@ -14,6 +13,7 @@ import { usePuterStore } from "../lib/puter";
 
 export function SidebarDemo() {
   const {auth}=usePuterStore();
+  const [maleName,setMaleName] = useState(false)
   const links = [
     {
       label: "Dashboard",
@@ -44,8 +44,19 @@ export function SidebarDemo() {
       ),
     },
   ];
+  const maleNameInitials = ["A", "B", "D", "G", "J", "K", "M", "P", "R", "T", "V", "W", "Y", "Z"];
+  
   const [open, setOpen] = useState(false);
   const user = auth.getUser();
+
+useEffect(()=>{
+  const isMaleName = maleNameInitials.some(letter =>
+    user?.username.toUpperCase().startsWith(letter)
+  );
+  return isMaleName ? setMaleName(true) : setMaleName(false)
+},[])
+
+  
   return (
     <div
       className={cn(
@@ -72,7 +83,7 @@ export function SidebarDemo() {
                 href: "#",
                 icon: (
                   <img
-                    src={user?.image_url || "https://assets.aceternity.com/manu.png"}
+                    src={maleName ? "https://assets.aceternity.com/manu.png" : "/images/vicky.jpg"}
                     className="h-7 w-7 shrink-0 rounded-full"
                     width={50}
                     height={50}
